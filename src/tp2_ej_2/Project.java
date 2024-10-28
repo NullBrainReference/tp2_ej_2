@@ -5,13 +5,13 @@ import java.util.List;
 public class Project {
 	private float x;
 	private float y;
-	private List<Material> materialsRecuiered;
+	private List<Material> materialsRequiered;
 	private String engineerName;
 	
 	public Project(float x, float y, List<Material> materials) {
 		this.x = x;
 		this.y = y;
-		this.materialsRecuiered = materials;
+		this.materialsRequiered = materials;
 	}
 	
 	public void AssignEngineer(String name) {
@@ -20,7 +20,7 @@ public class Project {
 	
 	public float CalculateTotalCost() {
 		float total = 0;
-		for (Material material : materialsRecuiered) {
+		for (Material material : materialsRequiered) {
 			total += material.GetCost();
 		}
 		
@@ -35,7 +35,7 @@ public class Project {
 		
 		days += x * y;
 		
-		for (Material material : materialsRecuiered) {
+		for (Material material : materialsRequiered) {
 			days += material.GetWeight() * 10;
 		}
 		
